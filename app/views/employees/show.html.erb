@@ -1,0 +1,23 @@
+
+<p>
+<strong>Name:</strong>
+<%= @employee.name %>
+</p>
+
+<p>
+<strong>Age:</strong>
+<%= @employee.age %>
+</p>
+
+<p>
+<strong>Gender:</strong>
+<%= @employee.gender %>
+</p>
+
+<p>
+<strong>Designation:</strong>
+<%= @employee.designation %>
+</p>
+
+<%= link_to 'Edit', edit_employee_path(@employee) %>
+<%= link_to 'Home', employees_path %>

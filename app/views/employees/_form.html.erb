@@ -1,0 +1,37 @@
+
+<%= form_with model: @employee, :html => {:autocomplete => "on"}, local: true do |form| %>
+
+    <% if @employee.errors.any? %>
+    <div class="error_explanation">
+      <ul>
+        <% @employee.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <table class = "edit_table">
+        <tr>
+            <td><%= form.label :name %></td>
+            <td><%= form.text_field :name %></td>
+        </tr>
+        <tr>
+            <td><%= form.label :age %><br></td>
+            <td><%= form.text_field :age %></td>
+        </tr>
+        <tr>
+            <td><%= form.label :gender %><br></td>
+            <td><%= form.text_field :gender %></td>
+        </tr>
+        <tr>
+            <td><%= form.label :designation %><br></td>
+            <td><%= form.text_field :designation %></td>
+        </tr>
+    </table>
+    <p>
+      <%= form.submit @buttonName %>
+    </p>
+  <% end %>
+  
+  <%= link_to 'Home', employees_path %>

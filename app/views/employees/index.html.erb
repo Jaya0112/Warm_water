@@ -1,0 +1,32 @@
+
+<h2>Employees list</h2>
+ 
+<table class = "index_table">
+  <tr>
+    <th>S.NO</th>
+    <th>NAME</th>
+    <th>AGE</th>
+    <th>GENDER</th>
+    <th>DESIGNATION</th>
+  </tr>
+ 
+
+  <% count = 1 %>
+  <% @employees.each do |employee| %>
+    <tr>
+      <td><%= count %>
+      <td><%= employee.name %></td>
+      <td><%= employee.age %></td>
+      <td><%= employee.gender %></td>
+      <td><%= employee.designation %></td>
+      <td><%= link_to 'View', employee_path(employee) %></td>
+      <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
+      <td><%= link_to 'Destroy', employee_path(employee),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% count = count + 1 %>
+  <% end %>
+</table>
+<p>
+<%= link_to 'Add Employee', new_employee_path %>
