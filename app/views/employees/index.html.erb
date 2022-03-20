@@ -12,6 +12,7 @@
  
 
   <% count = 1 %>
+  <% unless @employees.blank? %>
   <% @employees.each do |employee| %>
     <tr>
       <td><%= count %>
@@ -26,6 +27,7 @@
               data: { confirm: 'Are you sure?' } %></td>
     </tr>
     <% count = count + 1 %>
+  <% end %>
   <% end %>
 </table>
 <p>
